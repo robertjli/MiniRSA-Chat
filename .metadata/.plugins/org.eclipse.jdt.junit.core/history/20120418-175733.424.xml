@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="MiniRSATest" project="MiniRSA Chat" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="minirsa.MiniRSATest" time="0.045">
+    <testcase name="testEndecrypt" classname="minirsa.MiniRSATest" time="0.003"/>
+    <testcase name="testModInverse" classname="minirsa.MiniRSATest" time="0.001"/>
+    <testcase name="testTotientFromPrimes" classname="minirsa.MiniRSATest" time="0.0"/>
+    <testcase name="testGCD" classname="minirsa.MiniRSATest" time="0.008"/>
+    <testcase name="testCoprime" classname="minirsa.MiniRSATest" time="0.03"/>
+    <testcase name="testModulo" classname="minirsa.MiniRSATest" time="0.001"/>
+    <testcase name="testCrackKey" classname="minirsa.MiniRSATest" time="0.001"/>
+  </testsuite>
+</testrun>
