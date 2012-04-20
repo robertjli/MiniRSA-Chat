@@ -1,0 +1,47 @@
+package minirsa;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Keygen {
+
+    /**
+     * Runs the RSA key generator. Takes two command line arguments n and m, 
+     * which are integers specifying which prime numbers to use. Generates an 
+     * RSA key pair with the nth and mth primes.
+     * 
+     * @param args n and m.
+     */
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            printUsage();
+        }
+        
+        int n = 0, m = 0;
+        try {
+            n = Integer.parseInt(args[0]);
+            m = Integer.parseInt(args[1]);
+            if (n <= 0 || m <= 0) {
+                printUsage();
+            }
+        } catch (Exception e) {
+            printUsage();
+        }
+        long p = getPrime(n);
+        long q = getPrime(m);
+        MiniRSA.generateKey(p, q);
+    }
+    
+    private static void printUsage() {
+        System.err.println("USAGE: java minirsa/Keygen n m\n");
+        System.err.println("n and m are integers specifying which prime " +
+        		"numbers to use. The RSA key pair will be generated using " +
+        		"the nth and mth primes.");
+        System.exit(-1);
+    }
+    
+    private static long getPrime(int n) {
+        
+    }
+
+}

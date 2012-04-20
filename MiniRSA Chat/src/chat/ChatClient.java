@@ -11,8 +11,8 @@ import java.net.Socket;
  * This is a simple command-line based chat client. When it is run, it must be 
  * run as either a server or a client, and only one server and one client can 
  * connect. To run the program:
- * <p>Server: <code>java ChatClient -s &lt;port number&gt;</code><br>
- * Client: <code>java ChatClient -c &lt;host&gt;:%lt;port number&gt;</code></p>
+ * <p>Server: <code>java chat/ChatClient -s &lt;port number&gt;</code><br>
+ * Client: <code>java chat/ChatClient -c &lt;host&gt;:%lt;port number&gt;</code></p>
  * 
  * @author Robert Li, Evan Schoenbach
  * @version April 19, 2012
@@ -60,7 +60,7 @@ public class ChatClient {
      */
     private void startServer() {
         System.out.println("Server listening on port " + port + ".");
-        ServerSocket serverSocket;
+        ServerSocket serverSocket = null;
         Socket clientSocket = null;
         try {
             serverSocket = new ServerSocket(port);
@@ -69,6 +69,15 @@ public class ChatClient {
             System.err.println("Connection error");
             e.printStackTrace();
             System.exit(-1);
+        }
+        if (serverSocket != null) {
+            try {
+                serverSocket.close();
+            } catch (Exception e) {
+                System.err.println("Connection error");
+                e.printStackTrace();
+                System.exit(-1);
+            }
         }
         System.out.println("Server connected.");
         createThreads(clientSocket);
@@ -183,8 +192,8 @@ public class ChatClient {
      */
     private static void printUsage() {
         System.err.println("USAGE");
-        System.err.println("Server: java ChatClient -s <port number>");
-        System.err.println("Client: java ChatClient -c <host>:<port number>");
+        System.err.println("Server: java chat/ChatClient -s <port number>");
+        System.err.println("Client: java chat/ChatClient -c <host>:<port number>");
         System.exit(-1);
     }
 }
