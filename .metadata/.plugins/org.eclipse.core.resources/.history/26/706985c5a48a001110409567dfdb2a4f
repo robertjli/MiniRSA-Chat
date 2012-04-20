@@ -1,8 +1,10 @@
 package chat;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ChatClient {
 
@@ -26,7 +28,6 @@ public class ChatClient {
     }
     
     private void startServer() {
-        System.out.println("Server listening on port " + port + ".");
         ServerSocket serverSocket;
         Socket clientSocket = null;
         try {
@@ -42,8 +43,6 @@ public class ChatClient {
     }
     
     private void startClient() {
-        System.out.println("Client attempting to connect to " + 
-                           host + ":" + port + ".");
         Socket serverSocket = null;
         try {
             serverSocket = new Socket(host, port);

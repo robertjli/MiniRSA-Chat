@@ -7,6 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="chat.ChatClient"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-c 123.123.456.456 8484"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-c 158.130.67.216:8484"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="MiniRSA Chat"/>
 </launchConfiguration>

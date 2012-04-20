@@ -1,20 +1,25 @@
 package chat;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ChatClient {
 
+    private boolean server;
     private InetAddress host;
     private int port;
     
     public ChatClient(int port) {
+        this.server = true;
         this.host = null;
         this.port = port;
     }
     
     public ChatClient(String host, int port) {
+        this.server = false;
         this.port = port;
         try {
             this.host = InetAddress.getByName(host);
@@ -26,9 +31,8 @@ public class ChatClient {
     }
     
     private void startServer() {
-        System.out.println("Server listening on port " + port + ".");
         ServerSocket serverSocket;
-        Socket clientSocket = null;
+        Socket clientSocket;
         try {
             serverSocket = new ServerSocket(port);
             clientSocket = serverSocket.accept();
@@ -37,14 +41,12 @@ public class ChatClient {
             e.printStackTrace();
             System.exit(-1);
         }
+        // TODO
         System.out.println("Server connected.");
-        createThreads(clientSocket);
     }
     
     private void startClient() {
-        System.out.println("Client attempting to connect to " + 
-                           host + ":" + port + ".");
-        Socket serverSocket = null;
+        Socket serverSocket;
         try {
             serverSocket = new Socket(host, port);
         } catch (Exception e) {
@@ -52,12 +54,8 @@ public class ChatClient {
             e.printStackTrace();
             System.exit(-1);
         }
-        System.out.println("Client connected.");
-        createThreads(serverSocket);
-    }
-    
-    private void createThreads(Socket socket) {
         // TODO
+        System.out.println("Client connected.");
     }
     
     public static void main(String args[]) {

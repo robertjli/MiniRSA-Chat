@@ -26,7 +26,6 @@ public class ChatClient {
     }
     
     private void startServer() {
-        System.out.println("Server listening on port " + port + ".");
         ServerSocket serverSocket;
         Socket clientSocket = null;
         try {
@@ -37,13 +36,13 @@ public class ChatClient {
             e.printStackTrace();
             System.exit(-1);
         }
-        System.out.println("Server connected.");
+        if (DEBUG) {
+            System.out.println("Server connected.");
+        }
         createThreads(clientSocket);
     }
     
     private void startClient() {
-        System.out.println("Client attempting to connect to " + 
-                           host + ":" + port + ".");
         Socket serverSocket = null;
         try {
             serverSocket = new Socket(host, port);
@@ -52,7 +51,9 @@ public class ChatClient {
             e.printStackTrace();
             System.exit(-1);
         }
-        System.out.println("Client connected.");
+        if (DEBUG) {
+            System.out.println("Client connected.");
+        }
         createThreads(serverSocket);
     }
     
