@@ -1,0 +1,23 @@
+package chatclient;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ChatClient {
+
+    // TODO what instance variables?
+    
+    public ChatClient(String host, int port, boolean server) {
+        if (server) {
+            try {
+                ServerSocket serverSocket = new ServerSocket(port);
+            } catch (IOException e) {
+                System.err.println("Failed to listen on port " + port + ".");
+                e.printStackTrace();
+                System.exit(-1);
+            }
+        } else { // client
+            
+        }
+    }
+}

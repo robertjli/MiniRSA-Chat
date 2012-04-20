@@ -1,0 +1,8 @@
+package chatclient;
+
+public class ChatClient {
+
+    public ChatClient(String host, int port, boolean server) {
+        
+    }
+}

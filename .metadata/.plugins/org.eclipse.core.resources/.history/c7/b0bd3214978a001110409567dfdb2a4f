@@ -1,0 +1,17 @@
+package chatclient;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ChatClient {
+
+    // TODO what instance variables?
+    
+    public ChatClient(String host, int port, boolean server) {
+        if (server) {
+            runServer()
+        } else { // client
+            
+        }
+    }
+}

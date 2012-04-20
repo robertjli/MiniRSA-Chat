@@ -1,0 +1,40 @@
+package chat;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ChatClient {
+
+    private static boolean server;
+    
+    public ChatClient(int port) {
+        server = true;
+        // TODO
+    }
+    
+    public ChatClient(String host, int port) {
+        server = false;
+        // TODO
+    }
+    
+    public static void main(String args[]) {
+        if (args.length != 2) {
+            printUsage();
+        }
+        
+        if (args[0].equals("-s")) { // server
+            
+        } else if (args[0].equals("-c")) { // client
+            
+        } else {
+            printUsage();
+        }
+    }
+    
+    public static void printUsage() {
+        System.err.println("USAGE");
+        System.err.println("Server: java ChatClient -s <port number>");
+        System.err.println("Client: java ChatClient -c <host>:<port number>");
+        System.exit(-1);
+    }
+}
