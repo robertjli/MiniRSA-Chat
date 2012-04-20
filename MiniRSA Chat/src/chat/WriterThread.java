@@ -1,6 +1,11 @@
 package chat;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
+
+import minirsa.MiniRSA;
 
 /**
  * A Runnable class that RSA-encrypts and writes data to a socket.
@@ -27,10 +32,48 @@ public class WriterThread implements Runnable {
         this.modulus = modulus;
     }
     
+    /* loop-- read a line from keyboard, write to socket */
     @Override
     public void run() {
-        // TODO loop-- read a line from keyboard, write to socket
+        PrintWriter out;
+        try {
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(System.in));
+            out = new PrintWriter(socket.getOutputStream(), true);
+            String input;
+            while (!(input.equals("quit"))) {
+                input = in.readLine();
+                if (!(input.equals("quit"))) {
+                    System.out.println("You typed: " + input);
+                }
+                
+                // Convert to long
+                long unencrypted = stringToASCII(input);
+                System.out.println("Unencrypted ASCII: " +
+                        Long.valueOf(unencrypted).toString());
+                
+                // encrypt input
+                long encrypted = MiniRSA.endecrypt(unencrypted, exponent, modulus);
+                System.out.println("Encrypted message: " + Long.valueOf(encrypted).toString());
 
+            }  
+        } catch (Exception e) {
+            System.err.println("IO error in Reader");
+            e.printStackTrace();
+            System.exit(-1);
+        }
+    }
+    
+    private long stringToASCII(String inputString) {
+        StringBuilder longBuild = new StringBuilder("");
+        for (int i = 0; i < inputString.length(); i++) {
+            char c = inputString.charAt(i);
+            int ascii = c;
+            longBuild.append(ascii);
+            }
+        String longString = longBuild.toString();
+        long l = Long.parseLong(longString);
+        return l;
     }
 
 }

@@ -33,7 +33,7 @@ public class MiniRSA {
      * @param c The modulus in the RSA key.
      * @return The encrypted message.
      */
-    public static long endecrypt(int msg, long key, long c) {
+    public static long endecrypt(long msg, long key, long c) {
         return modulo(msg, key, c);
     }
     
