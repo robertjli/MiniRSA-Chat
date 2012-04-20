@@ -1,9 +1,6 @@
 package chat;
 
-import java.io.IOException;
 import java.net.InetAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class ChatClient {
@@ -31,28 +28,11 @@ public class ChatClient {
     }
     
     private void startServer() {
-        ServerSocket serverSocket;
-        Socket clientSocket;
-        try {
-            serverSocket = new ServerSocket(port);
-            clientSocket = serverSocket.accept();
-        } catch (Exception e) {
-            System.err.println("Connection error");
-            e.printStackTrace();
-            System.exit(-1);
-        }
         // TODO
+        System.out.println("This is a server.");
     }
     
     private void startClient() {
-        Socket serverSocket;
-        try {
-            serverSocket = new Socket(host, port);
-        } catch (Exception e) {
-            System.err.println("Connection error");
-            e.printStackTrace();
-            System.exit(-1);
-        }
         // TODO
         System.out.println("This is a client.");
     }
