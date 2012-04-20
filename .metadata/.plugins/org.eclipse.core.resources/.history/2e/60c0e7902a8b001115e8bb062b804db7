@@ -1,0 +1,23 @@
+package minirsa;
+
+/**
+ * An RSA key cracker. Given a public key, uses a brute force algorithm to find 
+ * the corresponding private key.
+ * 
+ * @author Robert Li, Evan Schoenbach
+ * @version April 20, 2012
+ */
+public class Cracker {
+
+    /**
+     * Runs the RSA key cracker. Takes two command line arguments, e and m, 
+     * which are the exponent and modulus of the public key, respectively.
+     * 
+     * @param args e and m
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+    }
+
+}

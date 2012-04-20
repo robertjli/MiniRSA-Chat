@@ -30,6 +30,7 @@ public class WriterThread implements Runnable {
         this.socket = socket;
         this.exponent = exponent;
         this.modulus = modulus;
+        System.out.println("Writer encrypting with " + exponent + " " + modulus);
     }
     
     /* loop-- read a line from keyboard, write to socket */

@@ -29,6 +29,7 @@ public class ReaderThread implements Runnable {
         this.socket = socket;
         this.exponent = exponent;
         this.modulus = modulus;
+        System.out.println("Reader decrypting with " + exponent + " " + modulus);
     }
 
     @Override
