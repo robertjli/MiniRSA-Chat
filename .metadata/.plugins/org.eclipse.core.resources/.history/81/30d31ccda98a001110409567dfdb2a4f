@@ -181,7 +181,7 @@ public class BasicHttpClient {
             try {
                 statusCode = Integer.parseInt(initialLine.split(" ")[1]);
             } catch (NumberFormatException e) {
-                //XPathCrawler.writeToLog("Couldn't parse HTTP statuscode", e);
+                XPathCrawler.writeToLog("Couldn't parse HTTP statuscode", e);
                 e.printStackTrace();
             }
         }

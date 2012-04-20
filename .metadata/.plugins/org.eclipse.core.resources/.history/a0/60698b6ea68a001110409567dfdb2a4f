@@ -1,0 +1,11 @@
+package chat;
+
+public class WriterThread implements Runnable {
+
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+
+    }
+
+}

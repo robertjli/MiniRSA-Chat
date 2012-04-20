@@ -57,12 +57,7 @@ public class ChatClient {
     }
     
     private void createThreads(Socket socket) {
-        // TODO Get and send RSA key
-        Thread reader = new Thread(new ReaderThread(socket, 0, 0));
-        reader.start();
-        
-        Thread writer = new Thread(new WriterThread(socket, 0, 0));
-        writer.start();
+        // TODO
     }
     
     public static void main(String args[]) {
