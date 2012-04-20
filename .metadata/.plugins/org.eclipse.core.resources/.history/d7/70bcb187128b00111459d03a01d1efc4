@@ -99,10 +99,7 @@ public class ChatClient {
      */
     private void createThreads(Socket socket) {
         // TODO Get and send RSA key
-        
-        
-        Thread reader = new Thread(
-                            new ReaderThread(socket, privateExp, modulus));
+        Thread reader = new Thread(new ReaderThread(socket, 0, 0));
         reader.start();
         
         Thread writer = new Thread(new WriterThread(socket, 0, 0));
@@ -115,6 +112,8 @@ public class ChatClient {
     private void promptRSAKey() {
         BufferedReader br = new BufferedReader(
                                 new InputStreamReader(System.in));
+        String input = null;
+        
         try {
             System.out.print("Please enter your public exponent e: ");
             publicExp = Integer.parseInt(br.readLine());

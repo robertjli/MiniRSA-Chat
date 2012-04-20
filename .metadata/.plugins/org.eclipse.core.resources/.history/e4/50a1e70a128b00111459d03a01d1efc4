@@ -1,7 +1,5 @@
 package chat;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -99,10 +97,7 @@ public class ChatClient {
      */
     private void createThreads(Socket socket) {
         // TODO Get and send RSA key
-        
-        
-        Thread reader = new Thread(
-                            new ReaderThread(socket, privateExp, modulus));
+        Thread reader = new Thread(new ReaderThread(socket, 0, 0));
         reader.start();
         
         Thread writer = new Thread(new WriterThread(socket, 0, 0));
@@ -113,19 +108,7 @@ public class ChatClient {
      * Prompts the user for his RSA key.
      */
     private void promptRSAKey() {
-        BufferedReader br = new BufferedReader(
-                                new InputStreamReader(System.in));
-        try {
-            System.out.print("Please enter your public exponent e: ");
-            publicExp = Integer.parseInt(br.readLine());
-            System.out.print("Please enter your private exponent d: ");
-            privateExp = Integer.parseInt(br.readLine());
-            System.out.print("Please enter your modulus m: ");
-            modulus = Integer.parseInt(br.readLine());
-        } catch (Exception e) {
-            System.err.println("Read error");
-            System.exit(-1);
-        }
+        
     }
     
     public static void main(String args[]) {

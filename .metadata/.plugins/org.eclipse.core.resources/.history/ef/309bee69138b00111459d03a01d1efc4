@@ -107,6 +107,7 @@ public class ChatClient {
         
         Thread writer = new Thread(new WriterThread(socket, 0, 0));
         writer.start();
+        System.out.println(publicExp + " " + privateExp + " " + modulus);
     }
     
     /**
