@@ -34,6 +34,7 @@ public class Keygen {
         long p = getPrime(n);
         long q = getPrime(m);
         MiniRSA.generateKey(p, q);
+        System.out.println(n + " " + m + " " + p + " " + q);
     }
     
     /**

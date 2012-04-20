@@ -34,6 +34,7 @@ public class Keygen {
         long p = getPrime(n);
         long q = getPrime(m);
         MiniRSA.generateKey(p, q);
+        System.out.println(n + " " + m + " " + p + " " + q);
     }
     
     /**
@@ -78,6 +79,7 @@ public class Keygen {
             return false;
         }
         long n = 1;
+        System.out.println(Math.sqrt(p));
         while (6 * n - 1 <= Math.sqrt(p)) {
             if (divides(6 * n - 1, p) || 
                 (6 * n + 1 <= Math.sqrt(p) && divides(6 * n + 1, p))) {
