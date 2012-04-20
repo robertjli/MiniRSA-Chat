@@ -4,38 +4,16 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * This is a simple command-line based chat client. When it is run, it must be 
- * run as either a server or a client, and only one server and one client can 
- * connect. To run the program:
- * <p>Server: <code>java ChatClient -s &lt;port number&gt;</code><br>
- * Client: <code>java ChatClient -c &lt;host&gt;:%lt;port number&gt;</code></p>
- * 
- * @author Robert Li, Evan Schoenbach
- * @version April 19, 2012
- */
 public class ChatClient {
 
     private InetAddress host;
     private int port;
     
-    /**
-     * Creates a ChatClient with a null host and the specified port number, as 
-     * for a server.
-     * 
-     * @param port the port number to connect on.
-     */
     public ChatClient(int port) {
-        this(null, port);
+        this.host = null;
+        this.port = port;
     }
     
-    /**
-     * Creates a ChatClient with the specified host and port number, as for a 
-     * client.
-     * 
-     * @param host the host to connect to.
-     * @param port the port to connect to.
-     */
     public ChatClient(String host, int port) {
         this.port = port;
         try {
@@ -47,10 +25,6 @@ public class ChatClient {
         }
     }
     
-    /**
-     * Initializes the server by listening and accepting a connection on the 
-     * specified port.
-     */
     private void startServer() {
         System.out.println("Server listening on port " + port + ".");
         ServerSocket serverSocket;
@@ -67,10 +41,6 @@ public class ChatClient {
         createThreads(clientSocket);
     }
     
-    /**
-     * Initializes a client by connecting to the previously specified host and 
-     * port.
-     */
     private void startClient() {
         System.out.println("Client attempting to connect to " + 
                            host + ":" + port + ".");
@@ -86,11 +56,6 @@ public class ChatClient {
         createThreads(serverSocket);
     }
     
-    /**
-     * Creates the reader and writer threads.
-     * 
-     * @param socket the connected socket to read and write from.
-     */
     private void createThreads(Socket socket) {
         // TODO Get and send RSA key
         Thread reader = new Thread(new ReaderThread(socket, 0, 0));
@@ -134,10 +99,7 @@ public class ChatClient {
         }
     }
     
-    /**
-     * Prints directions on how to use the program.
-     */
-    private static void printUsage() {
+    public static void printUsage() {
         System.err.println("USAGE");
         System.err.println("Server: java ChatClient -s <port number>");
         System.err.println("Client: java ChatClient -c <host>:<port number>");

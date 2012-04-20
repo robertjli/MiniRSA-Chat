@@ -14,13 +14,6 @@ public class WriterThread implements Runnable {
     private long exponent;
     private long modulus;
     
-    /**
-     * Creates a WriterThread.
-     * 
-     * @param socket the socket to write to.
-     * @param exponent the exponent of the public RSA key.
-     * @param modulus the modulus of the public RSA key.
-     */
     public WriterThread(Socket socket, long exponent, long modulus) {
         this.socket = socket;
         this.exponent = exponent;

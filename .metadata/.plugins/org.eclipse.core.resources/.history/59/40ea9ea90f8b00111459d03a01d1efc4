@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * This class provides static library functions for the RSA algorithm.
  * 
- * @author Robert Li, Evan Schoenbach
+ * @author Robert Li
  * @version April 17, 2012
  */
 public class MiniRSA {
