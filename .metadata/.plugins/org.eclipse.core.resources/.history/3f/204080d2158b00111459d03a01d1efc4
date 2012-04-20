@@ -100,7 +100,7 @@ public class ChatClient {
      */
     private void createThreads(Socket socket) {
         // Send public RSA key, receive partner's public RSA key
-        int partnerExp = 0, partnerMod = 0;
+        int partnerExp, partnerMod;
         try {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(
@@ -120,8 +120,7 @@ public class ChatClient {
                             new ReaderThread(socket, privateExp, modulus));
         reader.start();
         
-        Thread writer = new Thread(
-                            new WriterThread(socket, partnerExp, partnerMod));
+        Thread writer = new Thread(new WriterThread(socket, partnerExp, partnerMod));
         writer.start();
     }
     

@@ -100,28 +100,26 @@ public class ChatClient {
      */
     private void createThreads(Socket socket) {
         // Send public RSA key, receive partner's public RSA key
-        int partnerExp = 0, partnerMod = 0;
+        PrintWriter out;
+        BufferedReader in;
         try {
-            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-            BufferedReader in = new BufferedReader(
+            out = new PrintWriter(socket.getOutputStream(), true);
+            in = new BufferedReader(
                                     new InputStreamReader(
                                             socket.getInputStream()));
-            out.println(publicExp + " " + modulus);
-            String[] partnerKey = in.readLine().split(" ");
-            partnerExp = Integer.parseInt(partnerKey[0]);
-            partnerMod = Integer.parseInt(partnerKey[1]);
         } catch (Exception e) {
             System.err.println("IO error");
             e.printStackTrace();
             System.exit(-1);
         }
         
+        
+        
         Thread reader = new Thread(
                             new ReaderThread(socket, privateExp, modulus));
         reader.start();
         
-        Thread writer = new Thread(
-                            new WriterThread(socket, partnerExp, partnerMod));
+        Thread writer = new Thread(new WriterThread(socket, 0, 0));
         writer.start();
     }
     
