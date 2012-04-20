@@ -134,6 +134,8 @@ public class MiniRSA {
         long m = totient(p, q);
         long e = coprime(m);
         long d = modInverse(e, m);
+        System.out.println("Public: (" + e + ", " + n + "); Private: (" + 
+                           d + ", " + n + ").");
         return new long[] {e, d, n};
     }
     

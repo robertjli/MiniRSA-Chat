@@ -33,9 +33,7 @@ public class Keygen {
         }
         long p = getPrime(n);
         long q = getPrime(m);
-        long[] key = MiniRSA.generateKey(p, q);
-        System.out.println("Public: (" + key[0] + ", " + key[2] + 
-                "); Private: (" + key[1] + ", " + key[2] + ").");
+        MiniRSA.generateKey(p, q);
     }
     
     /**
