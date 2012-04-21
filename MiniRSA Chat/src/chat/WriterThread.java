@@ -50,19 +50,21 @@ public class WriterThread implements Runnable {
                     System.out.println("You typed: " + input);
                 }
                 
-                // Break up, convert to long
-                ArrayList<Long> decryptedArray = encryptIntoChars(input);
+                // Convert to string of ascii values
+                String ascii = convertToAscii(input);
                 
-                // Encrypt each character individually
+                // Break into longs of length <= 5
+                ArrayList<Long> longs = asciiToLongs(ascii);
+                
+                // Encrypt each long
                 ArrayList<Long> encryptedArray = new ArrayList<>();
-                for (Long decrypted : decryptedArray) {
+                for (Long decrypted : longs) {
                     Long encrypted = Long.valueOf(MiniRSA.endecrypt(decrypted.longValue(), exponent, modulus));
                     encryptedArray.add(encrypted);
-                    System.out.println("Encrypted ASCII: " + decrypted + " to " + encrypted);
                 }
-
-                // convert ASCII to text
-                String encryptedText = longToString(encryptedArray);
+                
+                // convert longs to text
+                String encryptedText = longsToString(encryptedArray);
                 System.out.println("Send: " + encryptedText);
                 
                 // write input to socket
@@ -75,23 +77,40 @@ public class WriterThread implements Runnable {
         }
     }
     
-    private ArrayList<Long> encryptIntoChars(String longString) {
-        ArrayList<Long> pieces = new ArrayList<>();
-        for (int i = 0; i < longString.length(); i ++) {
-            char piece = longString.charAt(i);
-            long l = piece;
-            pieces.add(Long.valueOf(l));
+    private String convertToAscii(String string) {
+        StringBuilder asciiString = new StringBuilder("");
+        for (int i = 0; i < string.length(); i++) {
+            Integer ascii = (int) string.charAt(i);
+            String s = ascii.toString();
+            // if ascii value is 2-digits, append 0
+            if (s.length() == 2) asciiString.append(0);
+            asciiString.append(s);
         }
-        return pieces;
+        return asciiString.toString();
     }
     
-    private String longToString(ArrayList<Long> ascii) {
+    private String longsToString(ArrayList<Long> longs) {
         StringBuilder textString = new StringBuilder("");
-        for (Long l : ascii) {
+        for (Long l : longs) {
             String c = l.toString();
             textString.append(c);
         }
         return textString.toString();
+    }
+    
+    private ArrayList<Long> asciiToLongs(String ascii) {
+        ArrayList<Long> longs = new ArrayList<Long>();
+        for (int i = 0; i < ascii.length(); i++) {
+            String piece;
+            try {
+                piece = ascii.substring(i, i + 5);
+            } catch (Exception e) {
+                piece = ascii.substring(i);
+            }
+            Long l = Long.valueOf(piece);
+            longs.add(l);
+        }
+        return longs;
     }
 
 }

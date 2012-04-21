@@ -47,21 +47,23 @@ public class ReaderThread implements Runnable {
                 System.err.println("Reading line " + line); //debug
                 String inputString = line;
                 System.out.println("Received encrypted message: " + inputString);
-
-                // Break up, convert to long
-                ArrayList<Long> encryptedArray = breakIntoChars(inputString);
                 
-                // Decrypt each character individually
-                ArrayList<Long> decryptedArray = new ArrayList<>();
-                for (Long encrypted : encryptedArray) {
-                    Long decrypted = Long.valueOf(MiniRSA.endecrypt(encrypted.longValue(), exponent, modulus));
-                    decryptedArray.add(decrypted);
-                    System.out.println("Decrypted ASCII: " + encrypted + " to " + decrypted);
+                // Break into longs of length <= 5
+                ArrayList<Long> longs = stringToLongs(inputString);
+                
+                // Encrypt each long
+                ArrayList<Long> encryptedArray = new ArrayList<Long>();
+                for (Long decrypted : longs) {
+                    Long encrypted = Long.valueOf(MiniRSA.endecrypt(decrypted.longValue(), exponent, modulus));
+                    encryptedArray.add(encrypted);
                 }
                 
-                // convert ASCII to text
-                String text = longAsciiToString(decryptedArray);
-                System.out.println("Rec: " + text);
+                // convert longs to text
+                String encryptedText = longsToString(encryptedArray);
+                System.out.println("Send: " + encryptedText);
+                
+                // write input to socket
+                out.println(encryptedText);
             }  
         } catch (Exception e) {
             System.err.println("IO error in Reader");
@@ -70,24 +72,40 @@ public class ReaderThread implements Runnable {
         }
     }
     
-    private ArrayList<Long> breakIntoChars(String longString) {
-        ArrayList<Long> pieces = new ArrayList<>();
-        for (int i = 0; i < longString.length() / 3; i += 3) {  //TODO should not be incrementing by 3, since encrypted values are not same as ascii values
-            String piece = longString.substring(i, i + 3);
-            Long l = Long.getLong(piece);
-            pieces.add(l);
+    private String convertToAscii(String string) {
+        StringBuilder asciiString = new StringBuilder("");
+        for (int i = 0; i < string.length(); i++) {
+            Integer ascii = (int) string.charAt(i);
+            String s = ascii.toString();
+            // if ascii value is 2-digits, append 0
+            if (s.length() == 2) asciiString.append(0);
+            asciiString.append(s);
         }
-        return pieces;
+        return asciiString.toString();
     }
     
-    private String longAsciiToString(ArrayList<Long> ascii) {
+    private String longsToString(ArrayList<Long> longs) {
         StringBuilder textString = new StringBuilder("");
-        for (Long l : ascii) {
-            char c = (char) l.longValue();
-            System.err.println("Retrieving value " + l + ", char " + c);
+        for (Long l : longs) {
+            String c = l.toString();
             textString.append(c);
         }
         return textString.toString();
+    }
+    
+    private ArrayList<Long> stringToLongs(String ascii) {
+        ArrayList<Long> longs = new ArrayList<Long>();
+        for (int i = 0; i < ascii.length(); i++) {
+            String piece;
+            try {
+                piece = ascii.substring(i, i + 5);
+            } catch (Exception e) {
+                piece = ascii.substring(i);
+            }
+            Long l = Long.valueOf(piece);
+            longs.add(l);
+        }
+        return longs;
     }
 
 }
