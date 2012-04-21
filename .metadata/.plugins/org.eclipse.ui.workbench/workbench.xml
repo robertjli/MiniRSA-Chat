@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="32" version="2.0">
+<workbench progressCount="34" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="145" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -30,38 +30,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReaderThread.java" partName="ReaderThread.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/chat/ReaderThread.java" title="ReaderThread.java" tooltip="MiniRSA Chat/src/chat/ReaderThread.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/chat/ReaderThread.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="83" selectionOffset="741" selectionTopPixel="262"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WriterThread.java" partName="WriterThread.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/chat/WriterThread.java" title="WriterThread.java" tooltip="MiniRSA Chat/src/chat/WriterThread.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/chat/WriterThread.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="83" selectionOffset="727" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChatClient.java" partName="ChatClient.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/chat/ChatClient.java" title="ChatClient.java" tooltip="MiniRSA Chat/src/chat/ChatClient.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/chat/ChatClient.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4856" selectionTopPixel="1574"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSATest.java" partName="MiniRSATest.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/minirsa/MiniRSATest.java" title="MiniRSATest.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSATest.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/minirsa/MiniRSATest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1567" selectionTopPixel="694"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Keygen.java" partName="Keygen.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/minirsa/Keygen.java" title="Keygen.java" tooltip="MiniRSA Chat/src/minirsa/Keygen.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/minirsa/Keygen.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1587" selectionTopPixel="766"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSA.java" partName="MiniRSA.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/minirsa/MiniRSA.java" title="MiniRSA.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSA.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSA.java" partName="MiniRSA.java" path="D:/University of Pennsylvania/2011-2012 Spring Semester/CIT 595/Git/MiniRSA-Chat/MiniRSA Chat/src/minirsa/MiniRSA.java" title="MiniRSA.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSA.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MiniRSA Chat/src/minirsa/MiniRSA.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3986" selectionTopPixel="2188"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="368"/>
 </editor>
 </editors>
 <views>
@@ -70,11 +45,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (8 items)"/>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -255,162 +225,164 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/Cracker.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/Keygen.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/MiniRSA.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/chat/ChatClient.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/chat/ReaderThread.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/chat/WriterThread.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/MiniRSATest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/Keygen.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/chat/WriterThread.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MiniRSA Chat/src/minirsa/MiniRSA.java"/>
 </editors>
-<item historyLabel="WriterThread.java" index="2">
-<position info="not_deleted" x="727" y="0"/>
-</item>
-<item historyLabel="ReaderThread.java" index="1">
-<position info="not_deleted" x="671" y="0"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="6605" y="0"/>
-</item>
-<item historyLabel="WriterThread.java" index="2">
-<position info="not_deleted" x="727" y="83"/>
-</item>
-<item historyLabel="ReaderThread.java" index="1">
-<position info="not_deleted" x="741" y="83"/>
-</item>
-<item historyLabel="WriterThread.java" index="2">
-<position info="not_deleted" x="727" y="83"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="6605" y="0"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="2232" y="0"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="2384" y="0"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="4856" y="0"/>
-</item>
-<item historyLabel="ReaderThread.java" index="1">
-<position info="not_deleted" x="741" y="83"/>
-</item>
-<item historyLabel="WriterThread.java" index="2">
-<position info="not_deleted" x="727" y="83"/>
-</item>
-<item historyLabel="ChatClient.java" index="0">
-<position info="not_deleted" x="4856" y="0"/>
-</item>
-<item historyLabel="MiniRSATest.java" index="3">
-<position info="not_deleted" x="1567" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="879" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="384" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="412" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="929" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="748" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="779" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="518" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="562" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="678" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="740" y="0"/>
-</item>
-<item historyLabel="MiniRSA.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="MiniRSA.java" index="5">
-<position info="not_deleted" x="3986" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="750" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1265" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="599" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="631" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1311" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1359" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1360" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1567" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1613" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1630" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1631" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1726" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1727" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1768" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1794" y="0"/>
-</item>
-<item historyLabel="Keygen.java" index="4">
+<item historyLabel="Keygen.java" index="1">
 <position/>
 </item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="791" y="0"/>
+<item historyLabel="ChatClient.java" index="3">
+<position info="not_deleted" x="6278" y="44"/>
 </item>
-<item historyLabel="MiniRSA.java" index="5">
-<position info="not_deleted" x="3986" y="0"/>
+<item historyLabel="Keygen.java" index="1">
+<position/>
 </item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="791" y="0"/>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="140" y="0"/>
 </item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="872" y="0"/>
+<item historyLabel="Keygen.java" index="1">
+<position/>
 </item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="877" y="0"/>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="140" y="0"/>
 </item>
-<item historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1406" y="0"/>
+<item historyLabel="Keygen.java" index="1">
+<position/>
 </item>
-<item active="true" historyLabel="Keygen.java" index="4">
-<position info="not_deleted" x="1479" y="0"/>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="415" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="415" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="424" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="589" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="904" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="664" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="707" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="771" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="771" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="769" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="829" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="880" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="891" y="0"/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="904" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position/>
+</item>
+<item historyLabel="Cracker.java" index="0">
+<position info="not_deleted" x="884" y="0"/>
+</item>
+<item historyLabel="MiniRSA.java" index="2">
+<position/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MiniRSA.java" index="2">
+<position info="not_deleted" x="3860" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="1055" y="0"/>
+</item>
+<item historyLabel="MiniRSA.java" index="2">
+<position info="not_deleted" x="3860" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="1055" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="1070" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="1115" y="0"/>
+</item>
+<item historyLabel="Keygen.java" index="1">
+<position info="not_deleted" x="1110" y="0"/>
+</item>
+<item historyLabel="MiniRSA.java" index="2">
+<position info="not_deleted" x="3860" y="0"/>
+</item>
+<item historyLabel="ReaderThread.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WriterThread.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReaderThread.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WriterThread.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReaderThread.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="WriterThread.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="MiniRSA.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -433,20 +405,23 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSA.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSA.java">
 <persistable path="/MiniRSA Chat/src/minirsa/MiniRSA.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Keygen.java" tooltip="MiniRSA Chat/src/minirsa/Keygen.java">
-<persistable path="/MiniRSA Chat/src/minirsa/Keygen.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSATest.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSATest.java">
-<persistable path="/MiniRSA Chat/src/minirsa/MiniRSATest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChatClient.java" tooltip="MiniRSA Chat/src/chat/ChatClient.java">
-<persistable path="/MiniRSA Chat/src/chat/ChatClient.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WriterThread.java" tooltip="MiniRSA Chat/src/chat/WriterThread.java">
 <persistable path="/MiniRSA Chat/src/chat/WriterThread.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReaderThread.java" tooltip="MiniRSA Chat/src/chat/ReaderThread.java">
 <persistable path="/MiniRSA Chat/src/chat/ReaderThread.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Keygen.java" tooltip="MiniRSA Chat/src/minirsa/Keygen.java">
+<persistable path="/MiniRSA Chat/src/minirsa/Keygen.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChatClient.java" tooltip="MiniRSA Chat/src/chat/ChatClient.java">
+<persistable path="/MiniRSA Chat/src/chat/ChatClient.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Cracker.java" tooltip="MiniRSA Chat/src/minirsa/Cracker.java">
+<persistable path="/MiniRSA Chat/src/minirsa/Cracker.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniRSATest.java" tooltip="MiniRSA Chat/src/minirsa/MiniRSATest.java">
+<persistable path="/MiniRSA Chat/src/minirsa/MiniRSATest.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BasicHttpClient.java" tooltip="MiniRSA Chat/src/client/BasicHttpClient.java">
 <persistable path="/MiniRSA Chat/src/client/BasicHttpClient.java"/>

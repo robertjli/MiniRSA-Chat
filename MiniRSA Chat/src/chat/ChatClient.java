@@ -132,6 +132,8 @@ public class ChatClient {
         Thread writer = new Thread(
                             new WriterThread(socket, partnerExp, partnerMod));
         writer.start();
+        
+        
     }
     
     /**
