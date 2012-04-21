@@ -1,0 +1,69 @@
+Robert Li
+CIT 595 Final Project
+Mini-RSA Chat
+
+This project is a 2-way chat program. written in Java, that encrypts all 
+messages using the RSA encryption algorithm. It first exchanges public keys 
+with its counterpart, then encrypts each message sent with that public key. 
+Messages received are then decrypted with the private key.
+
+It also includes an application to generate an RSA key pair, as well as an 
+application to crack an RSA public key via brute force.
+
+
+-----INSTRUCTIONS-----
+
+STARTING THE PROGRAM
+
+To run the program, you can use the included Makefile. The following commands 
+are available:
+
+ make runserver - Compiles, then runs the chat server on port 8484.
+ make runclient - Compiles, then runs the chat client using host localhost and 
+                    port 8484
+ make runkeygen - Compiles, then runs the RSA key generator with the 50th and 
+                    100th prime numbers.
+ make runcrack  - Compiles, then runs the RSA key cracker with the public key 
+                    (2729, 3149).
+ make build     - Compiles all .java files to .class files.
+ make clean     - Removes the compiled files.
+
+After compiling, you can run the programs with the following commands:
+
+ Server: java chat/ChatClient -s <port number>
+ Starts a server, which listens on the specified port number.
+
+ Client: java chat/ChatClient -c <host>:<port number>
+ Starts a client, which attempts to connect to a server at the specified host 
+   and port number.
+
+ Key Generator: java minirsa/Keygen <n> <m>
+ Generates a random RSA key pair using the nth and mth prime numbers.
+
+ Cracker: java minirsa/Cracker <e> <m>
+ Using a brute force algorithm, 
+
+Note that the server must be running and listening before the client attempts 
+to connect.
+
+PROGRAM FLOW
+
+The chat programs, when they first start, will prompt the user for their RSA 
+key. The server will then listen for a connection on the specified port, and 
+the client will attempt to connect to the specified host.
+
+After the connection is made, both programs will spawn a reader and a writer 
+thread. The writer thread will prompt the user for input, encrypt it, then 
+write it to the opened socket. The reader thread will read from the socket, 
+decrypt the message, and write it to the screen.
+
+
+-----PROGRAMMING NOTES-----
+
+APPROACH
+
+We started by writing the Mini-RSA library functions, which took us back to CIT 
+592. Next, we wrote a basic server and client, allowing the two to connect and 
+send messages back and forth. To make the chat full duplex, we implemented 
+threads, one for reading and one for writing. Lastly, we incorporated the RSA 
+encryption and decryption for the writer and reader, respectively.
