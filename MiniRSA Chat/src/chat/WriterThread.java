@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.net.Socket;
+import java.util.ArrayList;
 
 import minirsa.MiniRSA;
 
@@ -49,17 +50,20 @@ public class WriterThread implements Runnable {
                     System.out.println("You typed: " + input);
                 }
                 
-                // Convert to long
-                BigInteger unencrypted = stringToASCII(input);
-                System.out.println("Unencrypted ASCII: " +
-                        unencrypted.toString());
+                // Break up, convert to long
+                ArrayList<Long> decryptedArray = encryptIntoChars(input);
                 
-                // encrypt input
-                BigInteger encrypted = MiniRSA.endecrypt(unencrypted, exponent, modulus);
-                System.out.println("Encrypted message: " + encrypted.toString());
-                
-                // convert long to String
-                String encryptedText = encrypted.toString();
+                // Encrypt each character individually
+                ArrayList<Long> encryptedArray = new ArrayList<>();
+                for (Long decrypted : decryptedArray) {
+                    Long encrypted = Long.valueOf(MiniRSA.endecrypt(decrypted.longValue(), exponent, modulus));
+                    encryptedArray.add(encrypted);
+                    System.out.println("Encrypted ASCII: " + decrypted + " to " + encrypted);
+                }
+
+                // convert ASCII to text
+                String encryptedText = longToString(encryptedArray);
+                System.out.println("Send: " + encryptedText);
                 
                 // write input to socket
                 out.println(encryptedText);
@@ -71,16 +75,23 @@ public class WriterThread implements Runnable {
         }
     }
     
-    private BigInteger stringToASCII(String inputString) {
-//        StringBuilder longBuild = new StringBuilder("");
-//        for (int i = 0; i < inputString.length(); i++) {
-//            char c = inputString.charAt(i);
-//            long ascii = c;
-//            longBuild.append(ascii);
-//            }
-//        String longString = longBuild.toString();
-//        long l = Long.parseLong(longString);
-        return new BigInteger(inputString);
+    private ArrayList<Long> encryptIntoChars(String longString) {
+        ArrayList<Long> pieces = new ArrayList<>();
+        for (int i = 0; i < longString.length(); i ++) {
+            char piece = longString.charAt(i);
+            long l = piece;
+            pieces.add(Long.valueOf(l));
+        }
+        return pieces;
+    }
+    
+    private String longToString(ArrayList<Long> ascii) {
+        StringBuilder textString = new StringBuilder("");
+        for (Long l : ascii) {
+            String c = l.toString();
+            textString.append(c);
+        }
+        return textString.toString();
     }
 
 }

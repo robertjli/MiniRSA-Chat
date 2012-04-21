@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.net.Socket;
+import java.util.ArrayList;
 
 import minirsa.MiniRSA;
 
@@ -42,25 +43,24 @@ public class ReaderThread implements Runnable {
                             socket.getInputStream()));
             String line;
             while (true) {
-//                StringBuilder input = new StringBuilder("");
-//                while ((line = in.readLine()) != null) {
-            line = in.readLine();    
-                    System.err.println("Reading line " + line); //debug
-//                    input.append(line);
-//                }
-//                String inputString = input.toString();
+                line = in.readLine();    
+                System.err.println("Reading line " + line); //debug
                 String inputString = line;
                 System.out.println("Received encrypted message: " + inputString);
 
-                // Convert to long
-                BigInteger encrypted = new BigInteger(inputString);
-
-                // decrypt input
-                BigInteger decrypted = MiniRSA.endecrypt(encrypted, exponent, modulus);
-                System.out.println("Decrypted ASCII: " + decrypted.toString());
+                // Break up, convert to long
+                ArrayList<Long> encryptedArray = breakIntoChars(inputString);
+                
+                // Decrypt each character individually
+                ArrayList<Long> decryptedArray = new ArrayList<>();
+                for (Long encrypted : encryptedArray) {
+                    Long decrypted = Long.valueOf(MiniRSA.endecrypt(encrypted.longValue(), exponent, modulus));
+                    decryptedArray.add(decrypted);
+                    System.out.println("Decrypted ASCII: " + encrypted + " to " + decrypted);
+                }
                 
                 // convert ASCII to text
-                String text = asciiToString(decrypted);
+                String text = longAsciiToString(decryptedArray);
                 System.out.println("Rec: " + text);
             }  
         } catch (Exception e) {
@@ -70,8 +70,24 @@ public class ReaderThread implements Runnable {
         }
     }
     
-    private String asciiToString(BigInteger ascii) {
-        return ascii.toString();
+    private ArrayList<Long> breakIntoChars(String longString) {
+        ArrayList<Long> pieces = new ArrayList<>();
+        for (int i = 0; i < longString.length() / 3; i += 3) {  //TODO should not be incrementing by 3, since encrypted values are not same as ascii values
+            String piece = longString.substring(i, i + 3);
+            Long l = Long.getLong(piece);
+            pieces.add(l);
+        }
+        return pieces;
+    }
+    
+    private String longAsciiToString(ArrayList<Long> ascii) {
+        StringBuilder textString = new StringBuilder("");
+        for (Long l : ascii) {
+            char c = (char) l.longValue();
+            System.err.println("Retrieving value " + l + ", char " + c);
+            textString.append(c);
+        }
+        return textString.toString();
     }
 
 }

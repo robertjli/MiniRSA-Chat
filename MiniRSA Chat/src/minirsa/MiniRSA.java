@@ -34,7 +34,7 @@ public class MiniRSA {
      * @param c The modulus in the RSA key.
      * @return The encrypted message.
      */
-    public static BigInteger endecrypt(BigInteger msg, long key, long c) {
+    public static long endecrypt(long msg, long key, long c) {
         return modulo(msg, key, c);
     }
     
@@ -101,15 +101,11 @@ public class MiniRSA {
      * @param c
      * @return a<super>b</super> % c.
      */
-    public static BigInteger modulo(BigInteger a, long b, long c) {
+    public static long modulo(long a, long b, long c) {
         // TODO is there a better algo?
-        BigInteger bigB = BigInteger.valueOf(b);
-        BigInteger bigC = BigInteger.valueOf(c);
-        BigInteger zero = BigInteger.valueOf(0);
-        BigInteger one = BigInteger.valueOf(1);
-        BigInteger result = one;
-        for (BigInteger i = zero; i.compareTo(bigB) < 0; i.add(one)) {
-            result = result.multiply(a).remainder(bigC);
+        long result = 1;
+        for (long i = 0; i < b; i++) {
+            result = (result * a) % c;
         }
         return result;
     }
