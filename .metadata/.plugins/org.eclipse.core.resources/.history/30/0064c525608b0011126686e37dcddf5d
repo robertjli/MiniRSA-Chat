@@ -17,7 +17,6 @@ public class WriterThread implements Runnable {
     private Socket socket;
     private long exponent;
     private long modulus;
-    BufferedReader in;
     
     /**
      * Creates a WriterThread.
@@ -30,21 +29,19 @@ public class WriterThread implements Runnable {
         this.socket = socket;
         this.exponent = exponent;
         this.modulus = modulus;
-        this.in = new BufferedReader(
-                new InputStreamReader(System.in));
         System.out.println("Writer encrypting with " + exponent + " " + modulus);
     }
     
     @Override
     public void run() {
         try {
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(System.in));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             String input = "";
             while (true) {
                 input = in.readLine();
-                if (input.equals("/quit") && promptQuit()) {
-                    System.out.println("Good bye!");
-                    out.println(input);
+                if (input.equals("/quit")) {
                     System.exit(0);
                 }
                 System.out.println("You typed: " + input);
@@ -66,21 +63,6 @@ public class WriterThread implements Runnable {
             ret += MiniRSA.endecrypt(input.charAt(i), exponent, modulus) + " ";
         }
         return ret;
-    }
-    
-    private boolean promptQuit() {
-        String input = "";
-        while (!input.equals("y") && !input.equals("n")) {
-            System.out.print("Really quit (y/n)? ");
-            try {
-                input = in.readLine().toLowerCase();
-            } catch (Exception e) {
-                System.err.println("IO error in Writer");
-                e.printStackTrace();
-                System.exit(-1);
-            }
-        }
-        return input.equals("y");
     }
 
 }

@@ -46,10 +46,8 @@ public class ReaderThread implements Runnable {
                 }
                 System.out.println("> " + line);
                 
-                if (line.length() > 0) {
-                    String[] chars = line.split(" ");
-                    System.out.println(">> " + decrypt(chars));
-                }
+                String[] chars = line.split(" ");
+                System.out.println(">> " + decrypt(chars));
             }  
         } catch (Exception e) {
             System.err.println("IO error in Reader");

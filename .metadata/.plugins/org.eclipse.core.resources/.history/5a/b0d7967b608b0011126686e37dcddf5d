@@ -132,6 +132,15 @@ public class ChatClient {
         Thread writer = new Thread(
                             new WriterThread(socket, partnerExp, partnerMod));
         writer.start();
+        /*
+        try {
+            writer.join();
+            reader.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("Done!");
+        */
     }
     
     /**

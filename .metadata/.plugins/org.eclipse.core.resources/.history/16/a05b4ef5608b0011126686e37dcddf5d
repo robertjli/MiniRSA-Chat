@@ -71,14 +71,8 @@ public class WriterThread implements Runnable {
     private boolean promptQuit() {
         String input = "";
         while (!input.equals("y") && !input.equals("n")) {
-            System.out.print("Really quit (y/n)? ");
-            try {
-                input = in.readLine().toLowerCase();
-            } catch (Exception e) {
-                System.err.println("IO error in Writer");
-                e.printStackTrace();
-                System.exit(-1);
-            }
+            System.out.println("Really quit (y/n)? ");
+            input = 
         }
         return input.equals("y");
     }
